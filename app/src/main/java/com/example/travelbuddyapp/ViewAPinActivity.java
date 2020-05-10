@@ -88,7 +88,6 @@ public class ViewAPinActivity extends AppCompatActivity {
         String description = bundle.getString("description");
         String image = bundle.getString("image");
         String cat = bundle.getString("cat");
-        // get averaged rating from ratingdatabase float rating = bundle.getstring()
 
         DocumentReference docRef = db.collection("rating").document(thePinID);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -149,9 +148,6 @@ public class ViewAPinActivity extends AppCompatActivity {
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
              public void onRatingChanged(RatingBar ratingBar, final float v, boolean b) {
-            //if(b)
-            //SEND RATING TO DATABASE
-            //hide rating bar
                 System.out.println(v);
 
                 DocumentReference docRef = db.collection("rating").document(thePinID);

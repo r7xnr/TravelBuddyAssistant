@@ -12,7 +12,6 @@ public class Pin {
     private double latitude;
     private double longitude;
     private String imagePath;
-//    private String time;
     private Timestamp date;
     private String username;
     private String catData;
@@ -45,7 +44,6 @@ public class Pin {
         this.longitude = longitude;
         this.imagePath = imagePath;
         this.catData = category;
-//        this.time = time;
         this.date = date;
     }
 

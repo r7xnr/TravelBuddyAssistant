@@ -192,35 +192,27 @@ public class AddAPinActivity extends AppCompatActivity {
                 }
 
                 mStorageRef = FirebaseStorage.getInstance().getReference();
-
                 String imagePath ="images/"+id+".jpg";
-
                 StorageReference riversRef = mStorageRef.child(imagePath);
-
                 riversRef.putFile(image_uri)
                         .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                             @Override
                             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                                 // Get a URL to the uploaded content
                                 Uri downloadUrl = taskSnapshot.getUploadSessionUri();
-
                                 System.out.println(downloadUrl);
-
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception exception) {
-                                // Handle unsuccessful uploads
-                                // ...
+                                // Han
                             }
                         });
 
                 Pin pin = new Pin(id,name, description, location, email, imagePath, latitude, longitude, new Timestamp(new Date()), category);
-
                 //this is way of setting with your own id, up to you how you want it
                 System.out.println(pin.getUsername());
-
                 db.collection("pins").document(id).set(pin);
 
                 progress.setVisibility(View.GONE);

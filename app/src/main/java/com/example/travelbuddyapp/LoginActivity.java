@@ -28,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView forgotBtn;
     ImageButton imgButton;
     ProgressBar progress;
+    boolean nougat;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
 
             if (fauth.getCurrentUser() != null) {
                 startActivity(new Intent(LoginActivity.this, MapsActivity.class));
+                //nougat = true;
                 finish();
             }
 
